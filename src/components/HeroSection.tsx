@@ -33,7 +33,7 @@ export async function HeroSection() {
 						<h6 className='font-light text-lg md:text-base lg:text-xl tracking-wide'>
 							Operaciones crypto{' '}
 							<TextLoop
-								className='overflow-y-clip'
+								className='overflow-y-clip font-semibold'
 								transition={{
 									type: 'spring',
 									stiffness: 900,

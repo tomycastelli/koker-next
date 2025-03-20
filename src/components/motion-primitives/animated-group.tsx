@@ -107,8 +107,8 @@ function AnimatedGroup({ children, className, variants, preset, as = 'div', asCh
 	const containerVariants = variants?.container || selectedVariants.container
 	const itemVariants = variants?.item || selectedVariants.item
 
-	const MotionComponent = React.useMemo(() => motion.create(as as keyof JSX.IntrinsicElements), [as])
-	const MotionChild = React.useMemo(() => motion.create(asChild as keyof JSX.IntrinsicElements), [asChild])
+	const MotionComponent = React.useMemo(() => motion(as), [as])
+	const MotionChild = React.useMemo(() => motion(asChild), [asChild])
 
 	return (
 		<MotionComponent initial='hidden' animate='visible' variants={containerVariants} className={className}>
