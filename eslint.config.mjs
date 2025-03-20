@@ -12,7 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
 	...compat.extends('next/core-web-vitals', 'next/typescript'),
 	{
-		ignores: ['**/src/components/motion-primitives/**'],
+		ignores: ['**/motion-primitives/', '**/.next/**', '**/out/**', '**/build/**', '**/public/**', '**/node_modules/**'],
 	},
 ]
 
