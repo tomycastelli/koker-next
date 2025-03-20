@@ -1,0 +1,11 @@
+# Ignore motion-primitives folder
+src/components/motion-primitives/**/*
+
+# Build artifacts
+.next/**
+out/**
+build/**
+public/**
+
+# Node modules
+node_modules/** 
