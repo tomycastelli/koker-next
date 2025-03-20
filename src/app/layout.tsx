@@ -1,6 +1,13 @@
 import { Navbar } from '@/components/Navbar'
+import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
 import './globals.css'
+
+const inter = Inter({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-sans',
+})
 
 export default function RootLayout({
 	children,
@@ -8,7 +15,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en' className='scroll-smooth'>
+		<html lang='en' className={`scroll-smooth ${inter.variable}`}>
 			<head>
 				<meta charSet='utf-8' />
 				<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
