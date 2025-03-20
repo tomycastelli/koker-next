@@ -94,7 +94,7 @@ export function TransitionPanelComponent() {
 								</div>
 							) : (
 								<div className='bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10'>
-									<p className='text-zinc-100 leading-relaxed font-light'>{item.content}</p>
+									<p className='text-zinc-100 leading-relaxed'>{item.content}</p>
 								</div>
 							)}
 						</div>
