@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/Navbar'
+import { Toaster } from 'sonner'
 import './globals.css'
 
 export default function RootLayout({
@@ -26,6 +27,7 @@ export default function RootLayout({
 			<body>
 				<Navbar />
 				{children}
+				<Toaster richColors />
 			</body>
 		</html>
 	)

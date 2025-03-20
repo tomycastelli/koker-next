@@ -3,6 +3,7 @@ import { CryptoCard } from '@/components/CryptoCard'
 import { AnimatedGroup } from '@/components/motion-primitives/animated-group'
 import { TextLoop } from '@/components/motion-primitives/text-loop'
 import { cryptoConfig, CryptoData } from '@/lib/crypto'
+import { ChevronDownIcon } from '@radix-ui/react-icons'
 
 export async function HeroSection() {
 	const cryptoPrices = await getCryptoPrices()
@@ -103,6 +104,15 @@ export async function HeroSection() {
 					</div>
 				</div>
 			</div>
+
+			{/* Scroll down button */}
+			<a
+				href='#about'
+				className='absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 bg-black/30 backdrop-blur-md p-3 rounded-full border border-white/10 hover:bg-black/50 transition-all duration-300 hover:scale-110 animate-bounce'
+				aria-label='Scroll to About section'
+			>
+				<ChevronDownIcon className='h-6 w-6 text-white' />
+			</a>
 		</section>
 	)
 }
