@@ -11,4 +11,5 @@ export const cryptoConfig: Array<Omit<CryptoData, 'price'>> = [
 	{ id: 'ethereum', name: 'Ethereum', symbol: 'ETH', logo: '/eth.svg' },
 	{ id: 'solana', name: 'Solana', symbol: 'SOL', logo: '/sol.png' },
 	{ id: 'binancecoin', name: 'BNB', symbol: 'BNB', logo: '/bnb.svg' },
+	{ id: 'usdt', name: 'USDT', symbol: 'USDT', logo: '/usdt.svg' },
 ]

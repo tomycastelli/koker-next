@@ -114,7 +114,7 @@ export function RegisterDialog() {
 							<form.Field
 								name='name'
 								validators={{
-									onChange: ({ value }) =>
+									onSubmit: ({ value }) =>
 										!value
 											? 'El nombre es obligatorio'
 											: value.length < 2
@@ -146,7 +146,7 @@ export function RegisterDialog() {
 							<form.Field
 								name='email'
 								validators={{
-									onChange: ({ value }) =>
+									onSubmit: ({ value }) =>
 										!value
 											? 'El correo electrónico es obligatorio'
 											: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)

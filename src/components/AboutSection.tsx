@@ -5,9 +5,6 @@ import { VerticalInfiniteSlider } from '@/components/VerticalInfiniteSlider'
 export function AboutSection() {
 	return (
 		<>
-			{/* White divider stripe */}
-			<div className='w-full h-8 bg-white'></div>
-
 			{/* Main section - Screen height for lg (vertical slider), flexible for smaller screens */}
 			<section
 				id='about'

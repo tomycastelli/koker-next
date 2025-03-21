@@ -43,7 +43,7 @@ export function CryptoCard({ crypto, className }: CryptoCardProps) {
 					px-2 py-0.5 text-xs sm:text-sm md:px-3 md:py-1 lg:text-xs lg:px-2 lg:py-0.5 xl:text-sm xl:px-3 xl:py-1 rounded-lg shadow-md transition-all 
 					duration-300 group-hover:scale-110 group-hover:brightness-110`}
 			>
-				<p className='font-mono lg:text-xl text-md md:text-lg'>$</p>
+				<p className='font-mono lg:text-xl text-md md:text-lg'>{symbol === 'USDT' ? 'ARS' : '$'}</p>
 				<AnimatedNumber
 					className='font-mono lg:text-xl text-md md:text-lg'
 					value={priceValue}

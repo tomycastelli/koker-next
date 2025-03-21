@@ -28,9 +28,9 @@ export function TransitionPanelComponent() {
 					icon: <StackIcon className='h-5 w-5' />,
 				},
 				{
-					title: 'Privacidad y Confidencialidad',
+					title: 'Acceso a Activos y Pares Exclusivos',
 					description:
-						'Las operaciones no se publican en libros de órdenes abiertos, lo que protege la estrategia de inversión.',
+						'Permite el comercio de activos menos líquidos o personalizados que no siempre están disponibles en exchanges públicos.',
 					icon: <LockClosedIcon className='h-5 w-5' />,
 				},
 				{
@@ -56,9 +56,7 @@ export function TransitionPanelComponent() {
 						key={index}
 						onClick={() => setActiveIndex(index)}
 						className={`rounded-md px-3 py-1 text-sm font-medium ${
-							activeIndex === index
-								? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100'
-								: 'bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400'
+							activeIndex === index ? 'bg-[#0217CD] text-white' : 'bg-zinc-100 text-black'
 						}`}
 					>
 						{item.title}
@@ -68,7 +66,7 @@ export function TransitionPanelComponent() {
 			<div className='overflow-hidden border-t border-zinc-200 dark:border-zinc-700'>
 				<TransitionPanel
 					activeIndex={activeIndex}
-					transition={{ duration: 0.2, ease: 'easeInOut' }}
+					transition={{ duration: 0.4, ease: 'easeInOut' }}
 					variants={{
 						enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
 						center: { opacity: 1, y: 0, filter: 'blur(0px)' },
@@ -80,22 +78,19 @@ export function TransitionPanelComponent() {
 							{item.isBenefits ? (
 								<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
 									{item.benefits?.map((benefit, i) => (
-										<div
-											key={i}
-											className='flex items-start space-x-3 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10'
-										>
-											<div className='flex-shrink-0 p-2 bg-blue-600 rounded text-white'>{benefit.icon}</div>
+										<div key={i} className='flex items-start space-x-3 bg-black/30 backdrop-blur-md rounded-lg p-4'>
+											<div className='flex-shrink-0 p-2 bg-[#0217CD] rounded text-white'>{benefit.icon}</div>
 											<div>
-												<h3 className='font-medium text-sm text-white'>{benefit.title}</h3>
-												<p className='text-xs text-zinc-200 mt-1 leading-relaxed'>{benefit.description}</p>
+												<h3 className='font-semibold text-sm text-white'>{benefit.title}</h3>
+												<p className='text-sm text-white mt-1'>{benefit.description}</p>
 											</div>
 										</div>
 									))}
 								</div>
 							) : (
-								<div className='bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10'>
-									<p className='text-zinc-100 leading-relaxed'>{item.content}</p>
-								</div>
+								<>
+									<p className='text-white leading-relaxed'>{item.content}</p>
+								</>
 							)}
 						</div>
 					))}

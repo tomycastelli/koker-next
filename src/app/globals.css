@@ -14,6 +14,7 @@
 @theme {
 	--font-sans: var(--font-sans, 'Inter', 'sans-serif');
 	--font-integral: 'IntegralCF', 'sans-serif';
+	--breakpoint-ssm: 492px;
 }
 
 :root {

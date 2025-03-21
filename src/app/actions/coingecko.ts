@@ -32,8 +32,29 @@ export async function getCryptoPrices() {
 			throw new Error(`API request failed with status ${response.status}`)
 		}
 
+		const responseUSDT = await fetch('https://criptoya.com/api/USDT/ARS/1000', {
+			headers: {
+				Accept: 'application/json',
+			},
+			next: {
+				revalidate: 300, // Cache for 5 minutes (300 seconds)
+			},
+		})
+
+		if (!responseUSDT.ok) {
+			throw new Error(`API request failed with status ${responseUSDT.status}`)
+		}
+
+		const dataUSDT = await responseUSDT.json()
+		const ask = dataUSDT['buenbit']['ask']
+		const bid = dataUSDT['buenbit']['bid']
+		const price = (ask + bid) / 2
+
 		const data: CryptoPrice = await response.json()
-		return data
+		return {
+			...data,
+			usdt: { usd: price },
+		}
 	} catch (error) {
 		console.error('Error fetching crypto prices:', error)
 		// Return fallback data in case of error
@@ -42,6 +63,7 @@ export async function getCryptoPrices() {
 			ethereum: { usd: 0 },
 			solana: { usd: 0 },
 			binancecoin: { usd: 0 },
+			usdt: { usd: 0 },
 		}
 	}
 }
