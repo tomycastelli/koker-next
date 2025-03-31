@@ -4,7 +4,7 @@ import { registerUser } from '@/app/actions/sendEmail'
 import { Button } from '@/components/ui/button'
 import type { AnyFieldApi } from '@tanstack/react-form'
 import { useForm } from '@tanstack/react-form'
-import { Loader2, Phone } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { BorderTrail } from './motion-primitives/border-trail'
@@ -55,9 +55,9 @@ export function ContactSection() {
 			<div className='absolute inset-0 bg-black/20 backdrop-blur-[4px]' />
 
 			<div className='relative z-10 w-full h-full flex items-center justify-center'>
-				<div className='grid grid-cols-1 lg:grid-cols-2 w-full h-full max-w-6xl px-4 sm:px-6 md:px-8 lg:px-10'>
+				<div className='w-full max-w-md'>
 					{/* Contact Form */}
-					<div className='flex flex-col items-center justify-center text-center lg:items-start lg:text-left py-8 sm:py-12 lg:py-16'>
+					<div className='flex flex-col items-center justify-center text-center py-8 sm:py-12 lg:py-16'>
 						<div className='w-full max-w-md bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg'>
 							<BorderTrail
 								transition={{
@@ -170,36 +170,6 @@ export function ContactSection() {
 								</form.Subscribe>
 							</form>
 						</div>
-					</div>
-
-					{/* Phone Number */}
-					<div className='flex flex-col items-center justify-center text-center lg:items-start lg:text-left py-8 sm:py-12 lg:py-16'>
-						<a
-							href='https://api.whatsapp.com/send?phone=5491171504341&text=Hola!%20Estoy%20interesado%20en%20Koker.'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='w-full max-w-md bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg transition-all duration-300 hover:scale-105'
-						>
-							<BorderTrail
-								transition={{
-									duration: 10,
-									delay: 0,
-									repeat: Infinity,
-									repeatType: 'loop',
-								}}
-								style={{
-									boxShadow:
-										'0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)',
-								}}
-								size={80}
-							/>
-							<div className='flex items-center justify-center gap-4'>
-								<Phone className='h-6 w-6 text-green-400' />
-								<p className='text-xl font-medium text-white hover:text-green-400 transition-colors'>
-									+54 9 11 7150-4341
-								</p>
-							</div>
-						</a>
 					</div>
 				</div>
 			</div>
