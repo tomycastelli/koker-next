@@ -1,9 +1,20 @@
+'use client'
+
 import { TextScramble } from '@/components/motion-primitives/text-scramble'
 import { RegisterDialog } from '@/components/RegisterDialog'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from './ui/button'
 
 export function Navbar() {
+	const scrollToSection = (e: React.MouseEvent<Element, MouseEvent>, sectionId: string) => {
+		e.preventDefault()
+		const section = document.getElementById(sectionId)
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
+
 	return (
 		<nav className='absolute top-0 left-0 right-0 z-50 w-full'>
 			<div className='w-5/6 mx-auto flex flex-row justify-between items-center py-2 md:py-3'>
@@ -19,19 +30,23 @@ export function Navbar() {
 					</TextScramble>
 				</Link>
 				<div className='flex items-center gap-x-8'>
-					<div className='md:flex hidden flex-row gap-x-6 md:gap-x-10 pt-1 text-lg md:text-xl lg:text-2xl'>
-						<Link
-							href='#soluciones'
-							className='transition-transform hover:scale-110 hover:underline underline-offset-8 text-white'
+					<div className='md:flex hidden flex-row gap-x-2 md:gap-x-8 pt-1 text-lg md:text-xl lg:text-2xl'>
+						<Button
+							onClick={e => scrollToSection(e, 'about')}
+							variant='link'
+							size='lg'
+							className='transition-transform hover:scale-110 hover:underline underline-offset-8 text-white text-xl'
 						>
 							Soluciones
-						</Link>
-						<Link
-							href='#contacto'
-							className='transition-transform hover:scale-110 hover:underline underline-offset-8 text-white'
+						</Button>
+						<Button
+							variant='link'
+							size='lg'
+							onClick={e => scrollToSection(e, 'contact')}
+							className='transition-transform hover:scale-110 hover:underline underline-offset-8 text-white text-xl'
 						>
 							Contacto
-						</Link>
+						</Button>
 					</div>
 					<RegisterDialog />
 				</div>
