@@ -4,6 +4,7 @@ import { AnimatedGroup } from '@/components/motion-primitives/animated-group'
 import { TextLoop } from '@/components/motion-primitives/text-loop'
 import { cryptoConfig, CryptoData } from '@/lib/crypto'
 import { ScrollAboutButton } from './ScrollAboutButton'
+import { TextEffect } from './motion-primitives/text-effect'
 
 export async function HeroSection() {
 	const cryptoPrices = await getCryptoPrices()
@@ -69,13 +70,16 @@ export async function HeroSection() {
 							</TextLoop>
 						</h6>
 						<h1 className='text-5xl md:text-6xl lg:text-8xl font-bold my-2 tracking-wider'>
-							Exchange OTC
-							<br className='lg:hidden' />
-							<span className='lg:ml-6'>a tu medida</span>
+							Exchange OTC <br className='lg:hidden' />a tu medida
 						</h1>
 						<h5 className='font-light text-xl lg:text-2xl tracking-wide'>
-							Especializados en transacciones OTC
-							<br className='lg:hidden' /> para clientes corporativos y de alto valor
+							<TextEffect per='char' preset='fade'>
+								Especializados en transacciones OTC
+							</TextEffect>
+							<br className='lg:hidden' />
+							<TextEffect per='char' preset='fade'>
+								para clientes corporativos y de alto valor
+							</TextEffect>
 						</h5>
 					</div>
 

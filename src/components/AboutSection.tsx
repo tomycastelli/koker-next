@@ -1,6 +1,7 @@
 import { HorizontalInfiniteSlider } from '@/components/HorizontalInfiniteSlider'
 import { TransitionPanelComponent } from '@/components/TransitionPanelComponent'
 import { VerticalInfiniteSlider } from '@/components/VerticalInfiniteSlider'
+import { InView } from './ui/in-view'
 
 export function AboutSection() {
 	return (
@@ -24,7 +25,16 @@ export function AboutSection() {
 					<div className='grid grid-cols-1 lg:grid-cols-2 w-full h-full'>
 						{/* First grid cell - TransitionPanelComponent with padding */}
 						<div className='flex flex-col items-center text-center lg:items-start lg:text-left px-4 sm:px-6 md:px-8 lg:px-10 py-8 sm:py-12 lg:py-16'>
-							<TransitionPanelComponent />
+							<InView
+								variants={{
+									hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+									visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+								}}
+								viewOptions={{ margin: '0px 0px -200px 0px' }}
+								transition={{ duration: 0.3, ease: 'easeInOut' }}
+							>
+								<TransitionPanelComponent />
+							</InView>
 						</div>
 
 						{/* Second grid cell - Different sliders based on screen size - NO PADDING for edge-to-edge sliders */}

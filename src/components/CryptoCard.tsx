@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { CryptoData } from '@/lib/crypto'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { GlowEffect } from './motion-primitives/glow-effect'
 type CryptoCardProps = {
 	crypto: CryptoData
 	className?: string
@@ -65,7 +66,8 @@ export function CryptoCard({ crypto, className }: CryptoCardProps) {
 				{/* Content container */}
 				<div className='relative z-10 h-24 w-24 sm:h-30 sm:w-30 md:h-36 md:w-36 lg:h-34 lg:w-34 xl:h-42 xl:w-42 flex items-center justify-center'>
 					{/* Image sized consistently for all cryptos */}
-					<div className='relative z-10 h-21 w-21 sm:h-27 sm:w-27 md:h-30 md:w-30 lg:h-30 lg:w-30 xl:h-38 xl:w-38'>
+					<div className='relative z-10 h-21 w-21 sm:h-27 sm:w-27 md:h-30 md:w-30 lg:h-30 lg:w-30 xl:h-38 xl:w-38 rounded-full'>
+						<GlowEffect colors={[crypto.color, crypto.color]} mode='static' blur='medium' className='rounded-full' />
 						<Image
 							src={logo}
 							alt={`${name} logo`}
