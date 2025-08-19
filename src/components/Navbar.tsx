@@ -39,14 +39,6 @@ export function Navbar() {
 						>
 							Soluciones
 						</Button>
-						<Button
-							variant='link'
-							size='lg'
-							onClick={e => scrollToSection(e, 'contact')}
-							className='transition-transform hover:scale-110 hover:underline underline-offset-8 text-white text-xl'
-						>
-							Contacto
-						</Button>
 					</div>
 					<RegisterDialog />
 				</div>

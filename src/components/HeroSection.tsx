@@ -27,7 +27,7 @@ export async function HeroSection() {
 		>
 			<div className='absolute inset-0 bg-black/5 backdrop-blur-[2px]' />
 
-			<div className='container relative z-10 px-6 sm:px-8 md:px-10 w-full'>
+			<div className='container relative z-10 px-6 sm:px-8 md:px-10 w-full mt-16 md:mt-0'>
 				{/* Main content - vertical on smaller screens, horizontal on lg+ */}
 				<div className='flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12 w-full'>
 					{/* Text Content */}

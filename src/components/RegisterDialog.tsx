@@ -15,6 +15,7 @@ import type { AnyFieldApi } from '@tanstack/react-form'
 import { useForm } from '@tanstack/react-form'
 import { Loader2, LogIn, X } from 'lucide-react'
 import { Transition, Variants } from 'motion/react'
+import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
 
@@ -82,16 +83,17 @@ export function RegisterDialog() {
 					duration={3}
 					scale={1.0}
 				/>
-				<Button
-					className='bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-3 md:px-4 rounded-md transition-colors'
-					aria-label='Registrate ahora'
-					onClick={() => setIsOpen(true)}
-				>
-					<div className='flex flex-row gap-x-2 items-center'>
-						<span className='hidden sm:inline'>Registrate ahora</span>
-						<LogIn className='h-full w-full stroke-2' />
-					</div>
-				</Button>
+				<Link href='https://app.koker.io/auth/sign-in'>
+					<Button
+						className='bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-3 md:px-4 rounded-md transition-colors'
+						aria-label='Registrate ahora'
+					>
+						<div className='flex flex-row gap-x-2 items-center'>
+							<span className='hidden sm:inline'>Registrate ahora</span>
+							<LogIn className='h-full w-full stroke-2' />
+						</div>
+					</Button>
+				</Link>
 			</div>
 			<Dialog open={isOpen} onOpenChange={setIsOpen} variants={dialogVariants} transition={dialogTransition}>
 				<DialogContent className='w-full max-w-md bg-white p-6 dark:bg-zinc-900'>
